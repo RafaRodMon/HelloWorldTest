@@ -3,6 +3,7 @@ using UnityEngine;
 public class MovingObjectScrpt : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private int moveSpeed = 30;
     void Start()
     {
 
@@ -12,6 +13,18 @@ public class MovingObjectScrpt : MonoBehaviour
     void Update()
     {
         movingObject();
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            moveSpeed += 10;
+        }
+        if (Input.GetKeyUp(KeyCode.RightControl))
+        {
+            moveSpeed -= 10;
+        }
+        if (Input.GetKeyUp(KeyCode.RightShift))
+        {
+            moveSpeed = 30;
+        }
     }
 
     private void movingObject()
@@ -19,27 +32,27 @@ public class MovingObjectScrpt : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.Translate(-1, 0, 0);
+            transform.position += Vector3.left * Time.deltaTime * moveSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.Translate(1, 0, 0);
+            transform.position += Vector3.right * Time.deltaTime * moveSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.Translate(0, 0, 1);
+            transform.position += Vector3.up * Time.deltaTime * moveSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            transform.Translate(0, 0, -1);
+            transform.position += Vector3.down * Time.deltaTime * moveSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.Translate(0, 1, 0);
+            transform.position += Vector3.forward * Time.deltaTime * moveSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            transform.Translate(0, -1, 0);
+            transform.position += Vector3.back * Time.deltaTime * moveSpeed;
         }
     }
 }
