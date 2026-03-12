@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b6481b6254b684692c076fd6887c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScriptingTracker
-  TrackedObject: {fileID: 0}
+  TrackedObject: {fileID: 1283033706}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
