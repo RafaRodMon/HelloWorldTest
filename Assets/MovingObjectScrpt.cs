@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovingObjectScrpt : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private int moveSpeed = 30;
+    public int moveSpeed = 30;
     void Start()
     {
 
